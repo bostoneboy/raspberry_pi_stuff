@@ -1,0 +1,12 @@
+[Unit]
+Description=dnsmasq
+After=network.target
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/dnsmasq
+#ExecStop=/usr/bin/screen -S autoscreen -X quit
+
+[Install]
+WantedBy=multi-user.target

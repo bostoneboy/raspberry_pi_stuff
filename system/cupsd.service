@@ -1,0 +1,12 @@
+[Unit]
+Description=cupsd
+Requires=network.target
+After=aria2c.service
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/cupsd
+
+[Install]
+WantedBy=multi-user.target

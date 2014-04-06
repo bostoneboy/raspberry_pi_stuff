@@ -1,0 +1,11 @@
+[Unit]
+Description=lighttpd Webserver
+After=network.target
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/lighttpd -f /etc/lighttpd/lighttpd.conf
+
+[Install]
+WantedBy=multi-user.target
