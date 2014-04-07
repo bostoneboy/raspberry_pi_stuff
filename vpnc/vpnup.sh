@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## get eth0's gateway
-GATEWAY_ETH0=$(/usr/bin/netstat -rn | /usr/bin/awk '$3=="0.0.0.0"&&$NF=="eth0"{print $2}')
+GATEWAY_ETH0=$(/usr/bin/netstat -rn | /usr/bin/awk '$1=="0.0.0.0"&&$NF=="eth0"{print $2}')
 
 #route del default dev eth0
 ## add route for china ip
