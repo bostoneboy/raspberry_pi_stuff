@@ -1,0 +1,13 @@
+[Unit]
+Description=vpnc -- cisco ipsec vpn
+Requires=network.target remote-fs.target
+After=network.target remote-fs.target
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/vpnchk --local-port 4501 /etc/vpnc/hk.conf
+#ExecStop=/usr/bin/screen -S autoscreen -X quit
+
+[Install]
+WantedBy=multi-user.target

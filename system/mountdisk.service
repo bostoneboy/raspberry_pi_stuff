@@ -1,0 +1,11 @@
+[Unit]
+Description=mount extended disk
+After=aria2c.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/bin/mount /dev/sda3 /media/aa/
+
+[Install]
+WantedBy=multi-user.target
